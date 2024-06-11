@@ -23,7 +23,7 @@ Este repositório contém a atividade de Linux do programa de bolsas da Compass 
 
 ---
 
-## Índice
+### Índice
 - [Descrição da Atividade](#descrição-da-atividade)
 - [Configurações Iniciais na AWS](#configurações-iniciais-na-aws)
 - [Gerar Par de Chaves para EC2](#gerar-par-de-chaves-para-ec2)
@@ -36,7 +36,6 @@ Este repositório contém a atividade de Linux do programa de bolsas da Compass 
 - [Associar IP Elástico à Instância EC2](#associar-ip-elástico-à-instância-ec2)
 - [Configurar o NFS](#configurar-o-nfs)
 - [Instalar e Configurar o Apache](#instalar-e-configurar-o-apache)
-- [Referências](#referências)
 
 ---
 
@@ -120,39 +119,39 @@ Para que uma instância tenha um endereço IPv4 público estático, é necessár
 - Selecione o IP alocado, clique em "Ações" e depois em "Associar endereço IP elástico".
 - Escolha a instância EC2 criada anteriormente e clique em "Associar".
 
-### Ajustando acesso ao NFS
-O NFS é uma solução de armazenamento em rede amplamente empregada para compartilhar informações através da rede. Na AWS, essa funcionalidade é oferecida pelo EFS (Elastic File System).
-- Primeiramente, vamos atualizar o sistema e instalar os utilitários necessários do NFS:
+### Configurando acesso ao NFS
+O NFS é uma solução de armazenamento em rede amplamente utilizada para compartilhar dados na rede. Na AWS, esse serviço é fornecido pelo EFS (Elastic File System).
+- Primeiro modo, vamos atualizar o sistema e instalar os utilitários do NFS:
   - `sudo yum update -y` 
-  em seguida
+  e depois
   - `sudo yum install -y nfs-utils`
 
-- Após esse passo, criaremos um diretório para o NFS, usando o seguinte comando:
+- Feito isso, vamos criar um diretório para o NFS, utilizando o comando:
   - `sudo mkdir -p /nfs/gabriel`
 
-- Uma vez criado o diretório, vamos ajustar as permissões:
+- Após criar o diretório, vamos configurar as permissões do diretório:
   - `sudo chown nobody:nobody /nfs/gabriel`
-  e em seguida
+  e depois
   - `sudo chmod 777 /nfs/gabriel`
 
-- Agora vamos configurar o compartilhamento do NFS desta forma:
+- Feito isso, vamos configurar o compartilhamento do NFS da seguinte forma:
   - `echo "/nfs/gabriel *(rw,sync,no_root_squash,no_subtree_check)" | sudo tee -a /etc/exports`
 
-- Após isso, exportaremos os sistemas de arquivo utilizando:
+- Depois, expostei os sistemas de arquivo utilizando o comando:
   - `sudo exportfs -a`
   
-- Por fim, para completar a configuração do NFS, iniciaremos e habilitaremos os serviços com os seguintes comandos:
+- E finalizando a parte do NFS, iniciei e habilitei os serviços dele utilizando os comandos:
   - `sudo systemctl start nfs-server`
-  e então
+  e depois
   - `sudo systemctl enable nfs-server`
 
-### Ajustando o Apache
-- Comecei instalando o apache com o comando:
+### Configurando o Apache
+- Primeiro utilizei o comando para instalar o apache:
   - `sudo yum install -y httpd`
 
-- Depois, iniciei e habilitei os serviços do Apache com:
+- Após isso, iniciei e habilitei os serviços do apache:
   - `sudo systemctl start httpd`
-  e então
+  e depois
   - `sudo systemctl enable httpd`
 
 - Feito isso, criei um diretório para o script:
