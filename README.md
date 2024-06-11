@@ -100,7 +100,7 @@ Esta etapa é fundamental para o acesso remoto à instância EC2.
 - Associe à VPC criada anteriormente.
 - Configure as regras de entrada clicando em "Adicionar nova regra" e adicionando as seguintes 7 regras:
 
-![Regras de Tráfego de Internet na Tabela de Roteamento](Regras%20Tr%C3%A1fego%20de%20internet%20na%20tabela%20de%20roteamento.png)
+![Regras de Tráfego de Internet na Tabela de Roteamento](regras-roteamento.jpg)
 
 ### Lançar a Instância EC2
 - Acesse o serviço EC2 na AWS, clique em "Instâncias" e depois em "Executar Instância".
