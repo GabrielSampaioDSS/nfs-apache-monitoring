@@ -61,7 +61,7 @@ Esta etapa é fundamental para o acesso remoto à instância EC2.
 ### Criar a VPC
 - Acesse o serviço VPC na AWS, clique em "Suas VPCs" no menu à esquerda e depois em "Criar VPC".
 - Selecione "Somente VPC" para configurar manualmente.
-- Nomeie como VPC-PROJETO.
+- Nomeie a VPC.
 - Escolha "Entrada manual de CIDR IPv4" e insira 10.0.0.0/16.
 - Deixe o bloco CIDR IPv6 como "Nenhum Bloco CIDR IPv6".
 - Clique em "Criar VPC".
@@ -69,7 +69,7 @@ Esta etapa é fundamental para o acesso remoto à instância EC2.
 ### Configurar Sub-Rede
 - Acesse o serviço VPC na AWS, clique em "Sub-redes" no menu à esquerda e depois em "Criar Sub-rede".
 - Selecione a VPC criada anteriormente.
-- Nomeie a sub-rede como Sub-Projeto.
+- Nomeie a sub-rede.
 - Escolha a zona de disponibilidade us-east-1a.
 - Insira 10.0.1.0/24 como o bloco CIDR IPv4 da sub-rede.
 - Clique em "Criar Sub-rede".
@@ -95,7 +95,7 @@ Esta etapa é fundamental para o acesso remoto à instância EC2.
 - Acesse o serviço EC2 na AWS, clique em "Segurança" e depois em "Grupos de segurança" no menu à esquerda.
 - Clique em "Criar grupo de segurança".
 - Nomeie o grupo de segurança.
-- Adicione a descrição ProjetoAWS para organização.
+- Adicione a descrição para organização.
 - Associe à VPC criada anteriormente.
 - Configure as regras de entrada clicando em "Adicionar nova regra" e adicionando as seguintes 7 regras:
 
