@@ -34,8 +34,8 @@ Este repositório contém a atividade de Linux do programa de bolsas da Compass 
 - [Definir Regras de Segurança](#definir-regras-de-segurança)
 - [Lançar a Instância EC2](#lançar-a-instância-ec2)
 - [Associar IP Elástico à Instância EC2](#associar-ip-elástico-à-instância-ec2)
-- [Configurar o NFS](#configurar-o-nfs)
-- [Instalar e Configurar o Apache](#instalar-e-configurar-o-apache)
+- [Configurar o NFS](#configurando-acesso-ao-nfs)
+- [Instalar e Configurar o Apache](#configurando-o-apache)
 
 ---
 
