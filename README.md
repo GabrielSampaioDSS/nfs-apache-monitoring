@@ -124,7 +124,6 @@ O NFS é uma solução de armazenamento em rede amplamente utilizada para compar
 
 - Primeiro modo, vamos atualizar o sistema e instalar os utilitários do NFS:
   - `sudo yum update -y` 
-  e depois
   - `sudo yum install -y nfs-utils`
 
 - Feito isso, vamos criar um diretório para o NFS, utilizando o comando:
@@ -132,7 +131,6 @@ O NFS é uma solução de armazenamento em rede amplamente utilizada para compar
 
 - Após criar o diretório, vamos configurar as permissões do diretório:
   - `sudo chown nobody:nobody /nfs/gabriel`
-  e depois
   - `sudo chmod 777 /nfs/gabriel`
 
 - Feito isso, vamos configurar o compartilhamento do NFS da seguinte forma:
@@ -143,7 +141,6 @@ O NFS é uma solução de armazenamento em rede amplamente utilizada para compar
   
 - E finalizando a parte do NFS, iniciei e habilitei os serviços dele utilizando os comandos:
   - `sudo systemctl start nfs-server`
-  e depois
   - `sudo systemctl enable nfs-server`
 
 ### Configurando o Apache
@@ -152,7 +149,6 @@ O NFS é uma solução de armazenamento em rede amplamente utilizada para compar
 
 - Após isso, iniciei e habilitei os serviços do apache:
   - `sudo systemctl start httpd`
-  e depois
   - `sudo systemctl enable httpd`
 
 - Feito isso, criei um diretório para o script:
