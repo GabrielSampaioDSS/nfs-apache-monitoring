@@ -53,7 +53,7 @@ Esta etapa é fundamental para o acesso remoto à instância EC2.
 
 - Acesse o serviço EC2 na AWS e clique em "Pares de chaves" no menu à esquerda.
 - Clique em "Criar par de chaves".
-- Nomeie a chave, por exemplo, Chave-Projeto.
+- Nomeie a chave.
 - Selecione o formato do arquivo como .pem para acesso via CMD.
 - Clique em "Criar par de chaves".
 - Salve o arquivo .pem gerado em um local seguro.
@@ -76,14 +76,14 @@ Esta etapa é fundamental para o acesso remoto à instância EC2.
 
 ### Configurar o Gateway de Internet
 - Acesse o serviço VPC na AWS, clique em "Gateways de internet" no menu à esquerda e depois em "Criar gateway de internet".
-- Nomeie como Projeto.
+- Nomeie.
 - Clique em "Criar gateway de internet".
 - Selecione o gateway criado, clique em "Ações" e depois em "Associar à VPC".
 - Escolha a VPC criada anteriormente e clique em "Associar".
 
 ### Configurar a Tabela de Roteamento
 - Acesse o serviço VPC na AWS, clique em "Tabelas de rotas" no menu à esquerda e depois em "Criar tabela de rotas".
-- Nomeie como Tab-Projeto.
+- Nomeie.
 - Associe a tabela à VPC criada anteriormente.
 - Selecione a tabela de rotas criada, clique em "Ações" e depois em "Editar rotas".
 - Adicione uma rota com os seguintes valores:
@@ -94,7 +94,7 @@ Esta etapa é fundamental para o acesso remoto à instância EC2.
 ### Definir Regras de Segurança
 - Acesse o serviço EC2 na AWS, clique em "Segurança" e depois em "Grupos de segurança" no menu à esquerda.
 - Clique em "Criar grupo de segurança".
-- Nomeie o grupo de segurança como ProjetoAWS.
+- Nomeie o grupo de segurança.
 - Adicione a descrição ProjetoAWS para organização.
 - Associe à VPC criada anteriormente.
 - Configure as regras de entrada clicando em "Adicionar nova regra" e adicionando as seguintes 7 regras:
@@ -106,9 +106,9 @@ Esta etapa é fundamental para o acesso remoto à instância EC2.
 - Na seção de nomes e tags, use os valores padrão (Name, Project e CostCenter) para instâncias e volumes.
 - Escolha a imagem Amazon Linux 2 AMI (HVM), SSD Volume Type.
 - Selecione t3.small como o tipo de instância.
-- Selecione a chave gerada anteriormente (Chave-Projeto).
+- Selecione a chave gerada anteriormente.
 - Na configuração de rede, clique em "Editar" e verifique se a VPC e a sub-rede criadas estão selecionadas.
-- Na seção de firewall, escolha "Selecionar grupo de segurança existente" e selecione ProjetoAWS.
+- Na seção de firewall, escolha "Selecionar grupo de segurança existente" e selecione.
 - Para armazenamento, defina o tamanho como 16 GB gp2 (SSD).
 - Clique em "Executar Instância".
 
@@ -121,6 +121,7 @@ Para que uma instância tenha um endereço IPv4 público estático, é necessár
 
 ### Configurando acesso ao NFS
 O NFS é uma solução de armazenamento em rede amplamente utilizada para compartilhar dados na rede. Na AWS, esse serviço é fornecido pelo EFS (Elastic File System).
+
 - Primeiro modo, vamos atualizar o sistema e instalar os utilitários do NFS:
   - `sudo yum update -y` 
   e depois
@@ -186,4 +187,4 @@ Código de configuração do cron:
     
 
 ### Conclusão
-Com essas etapas concluímos a configuração. Uma maneira de verificar se o Apache está funcionando corretamente é acessar o IP público da instância e verificar se a página do Apache é exibida.
+Com essas etapas está finalizada a configuração. Uma maneira de verificar se o Apache está funcionando corretamente é acessar o IP público da instância e verificar se a página do Apache é exibida.
