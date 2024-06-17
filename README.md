@@ -120,7 +120,7 @@ Para que uma instância tenha um endereço IPv4 público estático, é necessár
 - Escolha a instância EC2 criada anteriormente e clique em "Associar".
 
 ### Configurando acesso ao NFS
-O NFS é uma solução de armazenamento em rede amplamente utilizada para compartilhar dados na rede. Na AWS, esse serviço é fornecido pelo EFS (Elastic File System).
+O NFS é uma solução de armazenamento em rede amplamente utilizada para compartilhar dados na rede.
 
 - Primeiro modo, vamos atualizar o sistema e instalar os utilitários do NFS:
   - `sudo yum update -y` 
@@ -136,7 +136,7 @@ O NFS é uma solução de armazenamento em rede amplamente utilizada para compar
 - Feito isso, vamos configurar o compartilhamento do NFS da seguinte forma:
   - `echo "/nfs/gabriel *(rw,sync,no_root_squash,no_subtree_check)" | sudo tee -a /etc/exports`
 
-- Depois, expostei os sistemas de arquivo utilizando o comando:
+- Depois, exportei os sistemas de arquivo utilizando o comando:
   - `sudo exportfs -a`
   
 - E finalizando a parte do NFS, iniciei e habilitei os serviços dele utilizando os comandos:
